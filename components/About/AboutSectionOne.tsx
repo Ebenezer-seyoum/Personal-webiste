@@ -1,71 +1,82 @@
 import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
-
-const checkIcon = (
-  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
-    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
-  </svg>
-);
 
 const AboutSectionOne = () => {
-  const List = ({ text }) => (
-    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
-      <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
-        {checkIcon}
-      </span>
-      {text}
-    </p>
-  );
-
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
-                mb="44px"
-              />
+    <section
+  id="about"
+  className="relative py-24 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white overflow-hidden"
+>
+  <div className="w-full px-4 lg:px-12 mx-auto relative">
+    {/* Decorative Lines */}
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-yellow-400 via-yellow-300 to-transparent rounded-r-full"></div>
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-transparent via-yellow-300 to-yellow-400 rounded-l-full"></div>
 
-              <div
-                className="wow fadeInUp mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Premium quality" />
-                    <List text="Tailwind CSS" />
-                    <List text="Use for lifetime" />
-                  </div>
+    {/* Decorative Blurs */}
+    <div className="absolute -top-16 -left-16 w-52 h-52 bg-yellow-400/20 rounded-full filter blur-3xl"></div>
+    <div className="absolute bottom-0 right-0 w-52 h-52 bg-yellow-300/10 rounded-full filter blur-2xl"></div>
 
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Next.js" />
-                    <List text="Rich documentation" />
-                    <List text="Developer friendly" />
-                  </div>
-                </div>
-              </div>
-            </div>
+    {/* Main Card Section */}
+    <div
+      data-aos="fade-up"
+      data-aos-delay="100"
+      data-aos-duration="800"
+      className="w-full max-w-[96rem] mx-auto bg-white text-green-900 rounded-lg border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.1)] px-6 py-12 lg:px-20 lg:py-16 flex flex-col-reverse lg:flex-row items-center gap-12"
+    >
+      {/* Text Content */}
+     {/* Text Content */}
+<div className="w-full lg:w-9/12 max-w-[850px] text-left bg-slate-300 p-6 rounded-lg">
+  <div className="space-y-6 text-[18px] sm:text-[20px] leading-relaxed text-justify font-normal text-dark-green font-serif">
+    <h1 className="text-5xl font-extrabold mb-4 text-dark font-serif">About Me</h1>
+    <p>
+      I recently graduated with a degree in Information Technology and have gained practical experience
+      in full-stack development, mobile app development, networking, and cybersecurity. I’m comfortable
+      working with Python, PHP, React.js, Node.js, and troubleshooting networks, and I’ve also completed
+      training in IoT and cybersecurity.
+    </p>
+    <p>
+      During university, I worked on a court information management system project where I built a
+      full-stack application to help improve case tracking and data access for legal institutions. I also had
+      the chance to intern at East Africa Lion Brands, where I supported system maintenance, IT support,
+      and security tasks.
+    </p>
+    <p>
+      I enjoy working with databases, Git, and Linux, and take pride in writing clean, efficient code that
+      solves real problems. I’m always eager to learn new skills, adapt to challenges, and contribute
+      meaningfully to any team I join.
+    </p>
+    <p>
+      In addition to development, I have a strong interest in DevOps practices, including version control
+      with Git, automation, CI/CD pipelines, Linux system administration, and containerization tools like
+      Docker. Now, I’m excited to bring my abilities to a forward-thinking organization where I can
+      continue growing as a developer.
+    </p>
+  </div>
+</div>
 
-            <div className="w-full px-4 lg:w-1/2">
-              <div
-                className="wow fadeInUp relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0"
-                data-wow-delay=".2s"
-              >
-                <Image
-                  src="/images/about/about-image.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto max-w-full lg:mr-0"
-                />
-              </div>
-            </div>
-          </div>
+
+      {/* Profile Image */}
+      <div
+        className="w-full lg:w-4/12 flex justify-center"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+      >
+        <div className="relative group max-w-[360px] rounded-lg overflow-hidden border-4 border-white/10 shadow-xl hover:shadow-yellow-400/30 transition-shadow duration-500">
+          <Image
+            src="/images/about/profile.jpg"
+            alt="Ebenezer Seyoum"
+            width={500}
+            height={500}
+            className="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-500"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 rounded-lg" />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
 
