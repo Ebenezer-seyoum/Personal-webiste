@@ -154,7 +154,7 @@ const BlogDetailsPage = () => {
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <img
+                    <Image
                       src={`https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${icon}.svg`}
                       alt={name}
                       className="h-7 w-7 group-hover:scale-110 transition-transform duration-300"
