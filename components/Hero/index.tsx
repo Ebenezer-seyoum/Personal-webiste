@@ -37,7 +37,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-[#FAF5EF] sm:text-4xl md:text-5xl">
-                  Hello, I'm Ebenezer Seyoum,
+                Hello, I&apos;m Ebenezer Seyoum
                 </h1>
 
                 <p className="mb-6 text-xl font-semibold text-[#F29D38] transition-all duration-500 ease-in-out">
