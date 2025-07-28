@@ -15,7 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // ✅ Call useEffect inside the component
   useEffect(() => {
     AOS.init();
   }, []);
@@ -23,10 +22,15 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <body className="dark:bg-black">
+      <body className="dark:bg-black flex flex-col min-h-screen">
         <Providers>
           <Header sticky={false} />
-          {children}
+          
+          {/* Main content area grows to fill space */}
+          <main className="flex-grow">
+            {children}
+          </main>
+
           <Footer />
           <ScrollToTop />
         </Providers>

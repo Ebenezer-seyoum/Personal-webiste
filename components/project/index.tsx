@@ -9,11 +9,13 @@ const Contact = () => {
   const [isZoomed, setIsZoomed] = useState(false);
 
   return (
-    <section
-      id="contact"
-      className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black font-sans"
-    >
-      <h1 className="text-4xl font-extrabold text-white mb-8 px-6 text-center">
+   <section
+  id="contact"
+  className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black"
+  style={{ fontFamily: '"Times New Roman", serif' }}
+>
+
+      <h1 className="text-6xl font-extrabold text-white mb-8 px-6 text-center">
         My Projects
       </h1>
 

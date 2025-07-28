@@ -23,10 +23,13 @@ const fadeIn = (direction = "up", delay = 0) => {
 
 const BlogDetailsPage = () => {
   return (
-    <section
-      id="contact"
-      className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black font-sans"
-    >
+   <section
+  id="contact"
+  className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black"
+  style={{ fontFamily: '"Times New Roman", serif' }}
+>
+
+
       <div className="container px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-4xl"
@@ -36,15 +39,16 @@ const BlogDetailsPage = () => {
           variants={fadeIn()}
         >
           {/* Header */}
+          
           <div className="text-center mb-12">
             <motion.h2
-              className="mb-4 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-4xl"
+              className="mb-4 text-6xl font-bold leading-tight text-dark dark:text-white sm:text-6xl"
               variants={fadeIn("up", 0.2)}
             >
               Get in Touch
             </motion.h2>
             <motion.p
-              className="text-base font-normal text-gray-800 dark:text-gray-200 sm:text-lg"
+              className="text-base font-normal text-gray-800 dark:text-gray-200 sm:text-2xl"
               variants={fadeIn("up", 0.3)}
             >
               I would love to discuss any future professional opportunities, potential partnerships, or even freelance roles — feel free to get in touch.
@@ -114,56 +118,60 @@ const BlogDetailsPage = () => {
             </motion.div>
 
             {/* Social Media */}
-            <motion.div
-              className="bg-white text-dark-green p-6 rounded-2xl shadow-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              variants={fadeIn("up", 0.6)}
-            >
-              <h4 className="text-4xl font-bold mb-4 text-dark text-center">Find me on:</h4>
+         <motion.div
+  className="bg-white text-dark-green p-6 rounded-2xl shadow-lg"
+  whileHover={{ scale: 1.02 }}
+  transition={{ type: "spring", stiffness: 300 }}
+  variants={fadeIn("up", 0.6)}
+>
+  <h4 className="text-4xl sm:text-5xl font-bold mb-6 text-dark text-center">Find me on:</h4>
 
-              <div className="flex flex-col gap-6 text-[18px] sm:text-[19px] leading-relaxed">
-                {[
-                  {
-                    name: "LinkedIn",
-                    href: "https://www.linkedin.com/in/Ebenezer-seyoum",
-                    icon: "linkedin",
-                  },
-                  {
-                    name: "GitHub",
-                    href: "https://github.com/Ebenezer-seyoum",
-                    icon: "github",
-                  },
-                  {
-                    name: "LeetCode",
-                    href: "https://leetcode.com/Ebenezer-seyoum",
-                    icon: "leetcode",
-                  },
-                  {
-                    name: "Telegram",
-                    href: "https://t.me/Abeni_M21",
-                    icon: "telegram",
-                  },
-                ].map(({ name, href, icon }, idx) => (
-                  <motion.a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 group"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Image
-                      src={`https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${icon}.svg`}
-                      alt={name}
-                      className="h-7 w-7 group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <span className="text-[18px] sm:text-[19px] group-hover:underline">{name}</span>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
+  <div className="flex flex-col gap-6 text-[20px] sm:text-[21px] leading-relaxed">
+    {[
+      {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/Ebenezer-seyoum",
+        icon: "linkedin",
+      },
+      {
+        name: "GitHub",
+        href: "https://github.com/Ebenezer-seyoum",
+        icon: "github",
+      },
+      {
+        name: "LeetCode",
+        href: "https://leetcode.com/Ebenezer-seyoum",
+        icon: "leetcode",
+      },
+      {
+        name: "Telegram",
+        href: "https://t.me/Abeni_M21",
+        icon: "telegram",
+      },
+    ].map(({ name, href, icon }) => (
+      <motion.a
+        key={name}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4 group"
+        whileHover={{ x: 5 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* FIXED: use <img> instead of <Image> */}
+        <img
+          src={`https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${icon}.svg`}
+          alt={name}
+          width="28"
+          height="28"
+          className="h-8 w-8 group-hover:scale-110 transition-transform duration-300"
+        />
+        <span className="text-[20px] sm:text-[21px] group-hover:underline">{name}</span>
+      </motion.a>
+    ))}
+  </div>
+</motion.div>
+
           </div>
         </motion.div>
       </div>

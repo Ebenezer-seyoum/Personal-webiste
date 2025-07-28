@@ -25,26 +25,26 @@ const AboutSectionOne = () => {
       {/* Text Content */}
      {/* Text Content */}
 <div className="w-full lg:w-9/12 max-w-[850px] text-left bg-slate-300 p-6 rounded-lg">
-  <div className="space-y-6 text-[18px] sm:text-[20px] leading-relaxed text-justify font-normal text-dark-green font-serif">
-    <h1 className="text-5xl font-extrabold mb-4 text-dark font-serif">About Me</h1>
-    <p>
+  <div className="space-y-6 text-[30px] sm:text-[20px] leading-relaxed text-justify font-normal text-dark-green font-serif">
+    <h1 className="text-6xl font-extrabold mb-4 text-dark font-serif">About Me</h1>
+    <p className="text-2xl">
       I recently graduated with a degree in Information Technology and have gained practical experience
       in full-stack development, mobile app development, networking, and cybersecurity. I’m comfortable
       working with Python, PHP, React.js, Node.js, and troubleshooting networks, and I’ve also completed
       training in IoT and cybersecurity.
     </p>
-    <p>
+    <p className="text-2xl">
       During university, I worked on a court information management system project where I built a
       full-stack application to help improve case tracking and data access for legal institutions. I also had
       the chance to intern at East Africa Lion Brands, where I supported system maintenance, IT support,
       and security tasks.
     </p>
-    <p>
+    <p className="text-2xl">
       I enjoy working with databases, Git, and Linux, and take pride in writing clean, efficient code that
       solves real problems. I’m always eager to learn new skills, adapt to challenges, and contribute
       meaningfully to any team I join.
     </p>
-    <p>
+    <p className="text-2xl">
       In addition to development, I have a strong interest in DevOps practices, including version control
       with Git, automation, CI/CD pipelines, Linux system administration, and containerization tools like
       Docker. Now, I’m excited to bring my abilities to a forward-thinking organization where I can

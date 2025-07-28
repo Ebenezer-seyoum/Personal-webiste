@@ -20,10 +20,9 @@ module.exports = {
       primary: "#4A6CF7",
       yellow: "#FBB040",
       "body-color": "#959CB1",
-      // Add your new custom dark colors here:
-      "dark-green": "#064e3b",   // e.g. Tailwind's emerald-900 or your custom dark green
-      "dark-blue": "#0c4a6e",    // a nice dark blue
-      "dark-gray": "#262626",    // very dark gray
+      "dark-green": "#064e3b",
+      "dark-blue": "#0c4a6e",
+      "dark-gray": "#262626",
     },
     screens: {
       xs: "450px",
@@ -34,11 +33,8 @@ module.exports = {
       "2xl": "1400px",
     },
     fontFamily: {
-      // Set Times New Roman as the default serif font for the project
-      sans: ['ui-sans-serif', 'system-ui'],  // keep default sans stack
-      serif: ['"Times New Roman"', 'Georgia', 'serif'], // Times New Roman as serif
-      // Optional: make Times New Roman the default for all text by overriding 'sans' (not recommended but possible)
-      // default: ['"Times New Roman"', 'Georgia', 'serif'],
+      sans: ['ui-sans-serif', 'system-ui'],
+      serif: ['"Times New Roman"', 'Georgia', 'serif'],
     },
     extend: {
       boxShadow: {
@@ -55,7 +51,18 @@ module.exports = {
       animation: {
         fadeSlide: "fadeSlide 0.6s ease-in-out",
       },
+      // ✅ Add perspective here
+      perspective: {
+        none: "none",
+        400: "400px",
+        600: "600px",
+        800: "800px",
+        1000: "1000px",
+        1200: "1200px",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    // Optional: Tailwind plugins like typography or forms
+  ],
 };
