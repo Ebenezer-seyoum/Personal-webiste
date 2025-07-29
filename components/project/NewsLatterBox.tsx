@@ -28,7 +28,7 @@ const CourtInfoSystem = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         >
-          Court Information Management System
+          Yeki woreda Court Information Management System
         </motion.h3>
       </motion.div>
 
