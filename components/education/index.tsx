@@ -12,12 +12,11 @@ const EducationAndCertifications = () => {
       id="education"
       className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black font-serif"
     >
-    <h1
-  className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white text-center mb-8 sm:mb-12 px-4 leading-tight tracking-tight"
->
-  Education & Certifications
-</h1>
-
+      <h1
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 sm:mb-14 px-4 leading-tight tracking-tight"
+      >
+        Education & Certifications
+      </h1>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Education */}
@@ -28,8 +27,10 @@ const EducationAndCertifications = () => {
           viewport={{ once: true }}
           className="bg-white rounded-2xl p-6 sm:p-8 text-dark-green shadow-lg"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dark">Education</h2>
-          <p className="text-lg sm:text-xl leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-dark">
+            Education
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
             🎓 <strong>BSc in Information Technology</strong><br />
             Mizan-Tepi University, Ethiopia<br />
             2022 – 2025
@@ -44,10 +45,12 @@ const EducationAndCertifications = () => {
           viewport={{ once: true }}
           className="bg-white rounded-2xl p-6 sm:p-8 text-dark-green shadow-lg"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-dark">Certifications</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-10 text-dark">
+            Certifications
+          </h2>
 
           {/* IoT Certificate */}
-          <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-10 mb-12">
+          <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-10 mb-14">
             <div
               onClick={() => setZoomImage("/images/IOT.jpg")}
               className="w-full lg:w-1/2 cursor-pointer rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300"
@@ -61,8 +64,10 @@ const EducationAndCertifications = () => {
               />
             </div>
             <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-dark mb-2">IoT Basics Practice Certification</h3>
-              <p className="text-base sm:text-lg leading-relaxed">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-dark mb-3">
+                IoT Basics Practice Certification
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                 This certificate was awarded by <strong>Mizan-Tepi University</strong> in recognition of my participation
                 in a one-week training program on <em>“Internet of Things (IoT) basics practice.”</em>
               </p>
@@ -84,8 +89,10 @@ const EducationAndCertifications = () => {
               />
             </div>
             <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-dark mb-2">ADBI Cybersecurity Certification</h3>
-              <p className="text-base sm:text-lg leading-relaxed">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-dark mb-3">
+                ADBI Cybersecurity Certification
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                 This certification from the <strong>Asian Development Bank Institute (ADBI)</strong> focuses on
                 foundational cybersecurity knowledge, including digital risk management, secure infrastructure, and
                 policy frameworks.
