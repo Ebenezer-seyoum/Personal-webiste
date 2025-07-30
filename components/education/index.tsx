@@ -12,9 +12,12 @@ const EducationAndCertifications = () => {
       id="education"
       className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black font-serif"
     >
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white text-center mb-12 px-4">
-        Education & Certifications
-      </h1>
+    <h1
+  className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white text-center mb-8 sm:mb-12 px-4 leading-tight tracking-tight"
+>
+  Education & Certifications
+</h1>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Education */}
