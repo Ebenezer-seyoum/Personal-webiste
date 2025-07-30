@@ -14,9 +14,10 @@ const Blog = () => {
 
         {/* Section Title */}
         <div className="text-center mb-20">
-          <h2 className="text-6xl font-extrabold text-white tracking-tight">
-            Professional Experience
-          </h2>
+         <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight text-center mb-6">
+  Professional Experience
+</h2>
+
           <p className="text-blue-200 mt-4 max-w-2xl mx-auto text-2xl">
             A timeline of hands-on experience, training, and career development.
           </p>
