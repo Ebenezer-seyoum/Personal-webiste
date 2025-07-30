@@ -23,9 +23,9 @@ const AboutSectionOne = () => {
           className="w-full max-w-[96rem] mx-auto bg-white text-green-900 rounded-lg border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.1)] px-4 sm:px-6 md:px-8 lg:px-20 py-10 md:py-14 lg:py-16 flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12"
         >
           {/* Text Content */}
-       <div className="w-full lg:w-8/12 max-w-[850px] text-left bg-slate-300 p-4 sm:p-6 md:p-8 rounded-lg">
-  <div className="space-y-4 sm:space-y-6 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 md:leading-9 font-normal text-dark-green font-serif text-left md:text-justify">
-    <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-dark font-serif">About Me</h1>
+      <div className="w-full lg:w-8/12 max-w-[850px] text-left bg-slate-300 p-4 sm:p-6 md:p-8 rounded-lg">
+  <div className="space-y-5 sm:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed sm:leading-7 md:leading-8 font-normal text-dark-green font-serif text-justify">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-dark font-serif">About Me</h1>
 
     <p>
       I recently graduated with a degree in Information Technology and have gained practical experience
@@ -55,6 +55,7 @@ const AboutSectionOne = () => {
     </p>
   </div>
 </div>
+
 
 
 
