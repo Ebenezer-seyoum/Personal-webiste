@@ -8,6 +8,7 @@ export default function Header({ sticky }: { sticky: boolean }) {
   const menuData = [
     { id: 1, title: 'Home', path: '/' },
     { id: 2, title: 'About', path: '/about' },
+    { id: 3, title: 'Education & Certifications', path: '/education' },
     { id: 3, title: 'Experience', path: '/experience' },
     { id: 4, title: 'Projects', path: '/project' },
     { id: 5, title: 'Contact', path: '/contact' },

@@ -45,15 +45,6 @@ const Blog = () => {
               "Hands-on training in penetration testing, vulnerability scanning, system hardening, and secure access protocols",
             ],
           },
-          {
-            title: "IoT Basics Practical Training",
-            company: "Mizan Tepi University",
-            date: "March 14 – 20, 2025",
-            side: "right",
-            description: [
-              "Focused on microcontrollers, sensor integration, device communication protocols, and real-time IoT applications",
-            ],
-          },
         ].map((item, i) => (
           <motion.div
             key={i}
