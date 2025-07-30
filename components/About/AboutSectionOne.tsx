@@ -8,12 +8,12 @@ const AboutSectionOne = () => {
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 mx-auto relative">
         {/* Decorative Lines */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-yellow-400 via-yellow-300 to-transparent rounded-r-full"></div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-transparent via-yellow-300 to-yellow-400 rounded-l-full"></div>
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-yellow-400 via-yellow-300 to-transparent rounded-r-full" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 h-56 w-[3px] bg-gradient-to-b from-transparent via-yellow-300 to-yellow-400 rounded-l-full" />
 
         {/* Decorative Blurs */}
-        <div className="absolute -top-16 -left-16 w-52 h-52 bg-yellow-400/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-52 h-52 bg-yellow-300/10 rounded-full filter blur-2xl"></div>
+        <div className="absolute -top-16 -left-16 w-52 h-52 bg-yellow-400/20 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-52 h-52 bg-yellow-300/10 rounded-full filter blur-2xl" />
 
         {/* Main Card Section */}
         <div
@@ -23,9 +23,9 @@ const AboutSectionOne = () => {
           className="w-full max-w-[96rem] mx-auto bg-white text-green-900 rounded-lg border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.1)] px-4 sm:px-6 md:px-8 lg:px-20 py-10 md:py-14 lg:py-16 flex flex-col-reverse lg:flex-row items-center gap-10 sm:gap-12"
         >
           {/* Text Content */}
-          <div className="w-full lg:w-8/12 max-w-[850px] text-left bg-slate-300 p-4 sm:p-6 md:p-8 rounded-lg">
-            <div className="space-y-5 sm:space-y-6 text-justify text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed sm:leading-7 md:leading-8 font-normal text-dark-green font-serif">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 text-dark font-serif">
+          <div className="w-full lg:w-8/12 max-w-[850px] bg-slate-300 p-4 sm:p-6 md:p-8 rounded-lg text-left">
+            <div className="space-y-6 text-justify font-serif text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.65rem] leading-relaxed">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-dark font-serif">
                 About Me
               </h1>
 

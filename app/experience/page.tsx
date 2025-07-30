@@ -42,7 +42,7 @@ const Blog = () => {
             date: "Feb – June 2025",
             side: "left",
             description: [
-              "Hands-on training in penetration testing, vulnerability scanning, system hardening, and secure access protocols",
+              "Hands-on training in penetration testing, vulnerability scanning and secure access protocols",
             ],
           },
         ].map((item, i) => (
