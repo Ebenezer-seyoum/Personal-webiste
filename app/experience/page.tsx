@@ -66,26 +66,28 @@ const Blog = () => {
               } transform -translate-x-1/2 lg:transform-none w-4 h-4 bg-sky-500 rounded-full border-2 border-white z-10`}
             ></div>
 
-            <div className="group bg-white text-black border border-gray-200 rounded-2xl shadow-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:scale-[1.015]">
-              {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-2">
-                {item.title}
-              </h3>
+          <div className="group bg-white text-black border border-gray-200 rounded-2xl shadow-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:scale-[1.015]">
+  <div>
+    {/* Title */}
+    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 mb-4">
+      {item.title}
+    </h3>
 
-              {/* Company and Date */}
-              <p className="text-gray-700 text-base sm:text-lg mb-4">
-                {item.company}
-                <br />
-                <span className="font-semibold">{item.date}</span>
-              </p>
+    {/* Company and Date */}
+    <p className="text-gray-700 text-base sm:text-lg md:text-xl mb-3">
+      <span className="block font-semibold">{item.company}</span>
+      <span className="text-sm sm:text-base md:text-lg text-gray-500">{item.date}</span>
+    </p>
 
-              {/* Description */}
-              <div className="text-dark-green text-base sm:text-lg space-y-2 leading-relaxed">
-                {item.description.map((d, index) => (
-                  <p key={index}>→ {d}</p>
-                ))}
-              </div>
-            </div>
+    {/* Description */}
+    <div className="text-black text-base sm:text-lg md:text-xl space-y-2 leading-relaxed">
+      {item.description.map((d, index) => (
+        <p key={index}>→ {d}</p>
+      ))}
+    </div>
+  </div>
+</div>
+
           </motion.div>
         ))}
       </div>
