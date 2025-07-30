@@ -24,7 +24,7 @@ const AboutSectionOne = () => {
         >
           {/* Text Content */}
           <div className="w-full lg:w-8/12 max-w-[850px] bg-slate-300 p-4 sm:p-6 md:p-8 rounded-lg text-left">
-            <div className="space-y-6 text-justify font-serif text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.65rem] leading-relaxed">
+            <div className="space-y-6 text-justify font-serif text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.65rem] text-dark-green leading-relaxed">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-dark font-serif">
                 About Me
               </h1>
