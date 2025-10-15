@@ -1,127 +1,202 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+
+interface ProjectCardData {
+  id: string;
+  name: string;
+  image: string;
+  accent: string; // tailwind color hex
+  summary: string; // 3 line short summary
+  details: { icon: string; text: string }[];
+}
+
+const projects: ProjectCardData[] = [
+  {
+    id: "court",
+    name: "Yeki Woreda Court IMS",
+    image: "/images/court.png",
+    accent: "#006400",
+    summary:
+      "Digitized case and litigant tracking system improving transparency and efficiency in judicial workflows.",
+    details: [
+      { icon: "🔐", text: "Secure role-based case access" },
+      { icon: "📄", text: "Centralized litigant documents" },
+      { icon: "📬", text: "Email hearing notifications" },
+      { icon: "📊", text: "Automated workflow reduces admin" },
+      { icon: "🌐", text: "Responsive Bootstrap UI" },
+    ],
+  },
+  {
+    id: "school",
+    name: "Balela School IMS",
+    image: "/images/IOT.jpg", // fallback school related image
+    accent: "#004080",
+    summary:
+      "School platform for managing student records, grades, attendance and generating reports efficiently.",
+    details: [
+      { icon: "🎓", text: "Student profile management" },
+      { icon: "📝", text: "Automated grade calculation" },
+      { icon: "📅", text: "Daily attendance tracking" },
+      { icon: "📑", text: "Printable report cards" },
+      { icon: "📊", text: "Performance & attendance analytics" },
+    ],
+  },
+  {
+    id: "delivery",
+    name: "Smart Delivery Platform",
+    image: "/images/about/profile.jpg",
+    accent: "#8B5CF6",
+    summary:
+      "Logistics web app optimizing parcel routing, real‑time driver tracking, and customer status updates.",
+    details: [
+      { icon: "🚚", text: "Route optimization algorithm" },
+      { icon: "📍", text: "Live GPS driver tracking" },
+      { icon: "🔔", text: "Status notifications & ETA" },
+      { icon: "📦", text: "Warehouse inventory sync" },
+      { icon: "📊", text: "Delivery performance dashboards" },
+    ],
+  },
+  {
+    id: "educonnect",
+    name: "Edu Connect Portal",
+    image: "/images/about/about-image.svg",
+    accent: "#0EA5E9",
+    summary:
+      "Collaboration portal connecting schools and teachers with smart matching, messaging, and onboarding.",
+    details: [
+      { icon: "🤝", text: "Smart vacancy–teacher matching" },
+      { icon: "💬", text: "Integrated secure messaging" },
+      { icon: "📂", text: "Document & credential vault" },
+      { icon: "⚙️", text: "Automated onboarding workflow" },
+      { icon: "📈", text: "Analytics on hiring efficiency" },
+    ],
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { staggerChildren: 0.08, duration: 0.6 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const InfoSystems = () => {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const toggle = (id: string) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
   return (
     <motion.div
-      className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 space-y-10"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      style={{ fontFamily: "Times New Roman, serif" }}
+      className="w-full mx-auto px-2 sm:px-4 lg:px-6 py-6 sm:py-8"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      style={{ fontFamily: 'Times New Roman, serif' }}
     >
-      {/* Court System Section */}
-      <motion.div
-        className="relative bg-white rounded-xl px-4 py-6 sm:px-6 sm:py-8 shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <div className="absolute left-0 top-0 h-full w-2 bg-[#006400] animate-pulse shadow-[0_0_20px_rgba(0,100,0,0.5)]" />
-        <motion.h3
-          className="ml-6 sm:ml-8 text-[#006400] text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide"
-          style={{ letterSpacing: '0.02em' }}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-        >
-          Yeki Woreda Court Information Management System
-        </motion.h3>
-      </motion.div>
+      <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+        {projects.map((p) => {
+          const isOpen = openId === p.id;
+          return (
+            <motion.div
+              key={p.id}
+              variants={cardVariants}
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-lg overflow-hidden flex flex-col"
+            >
+              {/* Header bar */}
+              <div
+                className="flex items-center gap-3 px-4 py-3"
+                style={{ background: `linear-gradient(135deg, ${p.accent} 0%, ${p.accent}33 100%)` }}
+              >
+                <div className="h-10 w-10 rounded-lg bg-white/20 flex items-center justify-center text-xl font-bold text-white shadow-inner">
+                  {p.name.charAt(0)}
+                </div>
+                <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide">
+                  {p.name}
+                </h3>
+              </div>
 
-      <div className="bg-white border border-gray-300 rounded-xl px-5 py-6 sm:px-8 sm:py-10 shadow-md text-[#006400] text-[17px] sm:text-[18px] leading-relaxed">
-        <p className="mb-6">
-          This web-based system, built using PHP, JavaScript, and Bootstrap,
-          enhances judicial operations by digitizing case tracking and litigant
-          data management. Its core automation and secure access increase
-          transparency and efficiency within legal workflows.
-        </p>
+              {/* Image & summary row */}
+              <div className="flex flex-col sm:flex-row gap-4 p-4">
+                <div className="sm:w-5/12 w-full">
+                  <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-md">
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+                <div className="sm:w-7/12 w-full flex flex-col justify-between">
+                  <p className="text-sm sm:text-[15px] leading-relaxed text-gray-200 line-clamp-3">
+                    {p.summary}
+                  </p>
+                  <button
+                    onClick={() => toggle(p.id)}
+                    className="mt-3 inline-flex items-center gap-2 self-start text-xs sm:text-sm font-medium px-3 py-2 rounded-md bg-gradient-to-r from-gray-800 to-gray-700 text-white hover:from-gray-700 hover:to-gray-600 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
+                    aria-expanded={isOpen}
+                  >
+                    <span>{isOpen ? 'Hide details' : 'See more'}</span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="inline-block"
+                    >
+                      ▼
+                    </motion.span>
+                  </button>
+                </div>
+              </div>
 
-        <h4 className="text-xl sm:text-2xl font-semibold mb-5 text-[#004d00]">Key Features:</h4>
+              {/* Expandable details */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="px-4 pb-5"
+                  >
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                      {p.details.map((d, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-[13px] sm:text-[14px] text-gray-100 bg-white/5 rounded-md px-3 py-2 border border-white/10"
+                        >
+                          <span className="text-base sm:text-lg">{d.icon}</span>
+                          <span>{d.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-        <ul className="space-y-4 pl-1">
-          <li className="flex items-start gap-3">
-            <span className="text-xl">🔐</span>
-            <span><strong>Secure Case Management:</strong> Real-time tracking with role-based access.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📄</span>
-            <span><strong>Litigant Info System:</strong> Centralized profiles & document handling.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📬</span>
-            <span><strong>Email Notifications:</strong> Alerts for hearings, updates, and documents.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📊</span>
-            <span><strong>Automated Workflow:</strong> Reduces admin overhead, speeds up resolutions.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">🌐</span>
-            <span><strong>Responsive Interface:</strong> Built with Bootstrap, fully mobile-friendly.</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* Balela School System Section */}
-      <motion.div
-        className="relative bg-white rounded-xl px-4 py-6 sm:px-6 sm:py-8 shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <div className="absolute left-0 top-0 h-full w-2 bg-[#004080] animate-pulse shadow-[0_0_20px_rgba(0,64,128,0.5)]" />
-        <motion.h3
-          className="ml-6 sm:ml-8 text-[#004080] text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide"
-          style={{ letterSpacing: '0.02em' }}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-        >
-          Balela School Information Management System
-        </motion.h3>
-      </motion.div>
-
-      <div className="bg-white border border-gray-300 rounded-xl px-5 py-6 sm:px-8 sm:py-10 shadow-md text-[#004080] text-[17px] sm:text-[18px] leading-relaxed">
-        <p className="mb-6">
-          The web-based application uses PHP and JavaScript along with the Bootstrap framework to improve school operations. 
-          The system allows for secure management of student records, grades, and attendance through database-driven automation, 
-          which boosts academic efficiency. Automated report generation and a responsive interface ensure transparency and access 
-          for teachers, students, and administrators.
-        </p>
-
-        <h4 className="text-xl sm:text-2xl font-semibold mb-5 text-[#00264d]">Key Features:</h4>
-
-        <ul className="space-y-4 pl-1">
-          <li className="flex items-start gap-3">
-            <span className="text-xl">🎓</span>
-            <span><strong>Student Data Management:</strong> Centralized storage of student profiles, academic history, and enrollment information.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📝</span>
-            <span><strong>Marks & Grades:</strong> Efficient entry of subject marks with automatic grade calculation.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📅</span>
-            <span><strong>Attendance Tracking:</strong> Simplifies daily attendance recording and reporting for each class.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📑</span>
-            <span><strong>Report Card Generation:</strong> Automatically generates printable student report cards each term or academic year.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">📊</span>
-            <span><strong>School Reports:</strong> Provides administrators with overall reports on student performance and attendance trends.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-xl">🌐</span>
-            <span><strong>Responsive UI:</strong> Built with Bootstrap to ensure smooth access on desktop, tablet, and mobile devices.</span>
-          </li>
-        </ul>
+              {/* Accent glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-2xl"
+                style={{ boxShadow: `0 0 0 1px ${p.accent}22, 0 0 30px -10px ${p.accent}` }}
+              />
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );
