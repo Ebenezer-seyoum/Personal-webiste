@@ -45,6 +45,20 @@ const Blog = () => {
               "Hands-on training in penetration testing, vulnerability scanning and secure access protocols",
             ],
           },
+            {
+            title: "Network Technician",
+            company: "IntraCom ICT Solutions",
+            date: "Oct 2025 – Present",
+            side: "right",
+            description: [
+                "Installed and integrated Extra Low Voltage (ELV) systems for a hotel project in Bishoftu",
+  "Performed structured cabling including backbone and horizontal cabling",
+  "Assisted in data center setup, rack installation, and cable management",
+  "Configured and integrated active network devices for data and telecommunication systems",
+  "Installed and maintained CCTV surveillance and door access control systems",
+  "Supported TV systems and network infrastructure deployment"
+            ],
+          },
         ].map((item, i) => (
           <motion.div
             key={i}
